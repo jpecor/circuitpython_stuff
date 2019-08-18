@@ -2,7 +2,7 @@
 A repo to store test programs, examples, etc. as I'm tinkering with CircuitPython
 
 ## fill_color_none_test.py
-### displayio make_transparent() toggler demo test 
+### displayio make_transparent() toggle demo test 
 I ran into some issues trying to switch between transparent and colored fills for
 some buttons I was using in a program.  After chasing some code around, I think that
 the make_transparent() and make_opaque() functions in displayio do not work after the initial 

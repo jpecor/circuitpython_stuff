@@ -1,8 +1,8 @@
 # circuitpython_stuff
 A repo to store test programs, examples, etc. as I'm tinkering with CircuitPython
 
-## trans_opaq_test.py
-### displayio make_transparent()/make_opaque() demo test 
+## fill_color_none_test.py
+### displayio make_transparent() toggler demo test 
 I ran into some issues trying to switch between transparent and colored fills for
 some buttons I was using in a program.  After chasing some code around, I think that
 the make_transparent() and make_opaque() functions in displayio do not work after the initial 
@@ -29,7 +29,11 @@ fill color.  This should work, but doesn't.
 I believe the bug itself is buried somewhere in the displayio core module.  But I don't fully understand 
 how the core all stitches together or works at this point.  
 
-***NOTE:***  make_opaque() is never explicitly called from roundrect, but make_transparent() is. I don't know make_opaque()
-is called somewhere under the covers of the displayio stuff, yet.
-
 Maybe someone with more experience can have a look?
+
+## trans_opaq_test.py
+This test will add some lower-level explicit calls to make_transparent() and make_opaque().  However, 
+they are not implemented yet.  This was the original name of fill_color_none_test.py, but I 
+thought it was misleading.
+
+Coming soon, I guess...  It's a pretty nice day out there, so I want to see the sun. :)

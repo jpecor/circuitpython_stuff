@@ -1,36 +1,38 @@
 """
-I ran into some issues trying to switch between transparent and colored fills for some buttons I was using in a program.
-After chasing some code around, I think that the make_transparent() and make_opaque() functions in displayio do not work
-after the initial creation of the shape object.
+I ran into some issues trying to switch between transparent and colored fills for some buttons I was using in a recent
+project.  After chasing some code around, I think that the make_transparent() and make_opaque() functions in
+displayio do not work after the initial creation of the shape object.
 
-That is, once a shape (the base for a button, as well) is created with either fill= or fill=None the shape will act as a
+That is, once a shape is created with either fill=<SOME_COLOR> or fill=None, the shape will act as a
 filled OR transparent shape from then on.
 
-It seems like the intent of those functions is to allow the status to change, but it doesn't work. Which, in turn, means
-that the fill and outline setters in Adafruit_CircuitPython_Display_Shapes cannot toggle from filled to transparent,
-either. The code structure implies that was the intent, but I don't think that it works.
+The issue appears to be related to the Palette core module in displayio, and the symptoms show up in
+Adafruit_Display_Shapes as well as Adafruit_Display_Buttons.
 
-The trans_opaq_test.py file implements a simple demo/test that shows the failure. By selecting whether or not the
-starting fill is a color or None (transparent), the related failure can be seen.
+It seems like the intent is to allow shapes to change from a solid color fill to transparent, or vice-versa,
+but it doesn't work.
+
+This program implements a simple demo/test that shows the failure. By selecting whether or not the
+starting fill is a color (solid, opaque color) or None (transparent), the related failure can be seen.
 
 If the starting shape starts with a color, the program will cycle through a few different colors and then attempt to
 make the shape transparent which will not work.
 
 If the starting shape is transparent (fill=None), the program will again cycle through different colors which will have
-NO effect as expected, but then it will attempt to change the body color to an actual fill color.
-This should work, but doesn't.
+NO effect as expected, but then it will attempt to change the body color to an actual fill color. This should work,
+but it doe not.
 
 I believe the bug itself is buried somewhere in the displayio core module. But I don't fully understand how the core
 all stitches together or works at this point.
 
 Maybe someone with more experience can have a look?
 
-
 """
 
 import time
 from adafruit_pyportal import PyPortal
-from adafruit_display_shapes.roundrect import RoundRect
+# from adafruit_display_shapes.roundrect import RoundRect
+from my_roundrect import RoundRect
 
 # Some colors
 WHITE = 0xffffff

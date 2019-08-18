@@ -10,7 +10,7 @@ It seems like the intent of those functions is to allow the status to change, bu
 that the fill and outline setters in Adafruit_CircuitPython_Display_Shapes cannot toggle from filled to transparent,
 either. The code structure implies that was the intent, but I don't think that it works.
 
-The trans_opaq_test.py file implements a simple demo/test that shows the failure. By selecting whether or not the
+This program implements a simple demo/test that shows the failure. By selecting whether or not the
 starting fill is a color or None (transparent), the related failure can be seen.
 
 If the starting shape starts with a color, the program will cycle through a few different colors and then attempt to

@@ -1,15 +1,14 @@
 """
 I ran into some issues trying to switch between transparent and colored fills for some buttons I was using in a recent
-project.  After chasing some code around, I think that the make_transparent() and make_opaque() functions in
-displayio do not work after the initial creation of the shape object.
+project.
 
-That is, once a shape is created with either fill=<SOME_COLOR> or fill=None, the shape will act as a
-filled OR transparent shape from then on.
+Once a shape is created with either fill=<SOME_COLOR> or fill=None, the shape will act as either a filled **OR**
+transparent shape and cannot be changed.
 
 The issue appears to be related to the Palette core module in displayio, and the symptoms show up in
 Adafruit_Display_Shapes as well as Adafruit_Display_Buttons.
 
-It seems like the intent is to allow shapes to change from a solid color fill to transparent, or vice-versa,
+It seems like the intent is to allow shapes to change from a solid color fill to transparent and vice-versa,
 but it doesn't work.
 
 This program implements a simple demo/test that shows the failure. By selecting whether or not the

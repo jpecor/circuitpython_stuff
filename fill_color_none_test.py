@@ -30,8 +30,8 @@ Maybe someone with more experience can have a look?
 
 import time
 from adafruit_pyportal import PyPortal
-# from adafruit_display_shapes.roundrect import RoundRect
-from my_roundrect import RoundRect
+from adafruit_display_shapes.roundrect import RoundRect
+# from my_roundrect import RoundRect
 
 # Some colors
 WHITE = 0xffffff

@@ -30,10 +30,16 @@ all stitches together or works at this point.
 
 Maybe someone with more experience can have a look?
 
+## test_transparent.py
+A simple test to demonstrate the behavior of a RoundRect when initializing as a transparent shape using **fill=None**.
+
+Also uses my_roundrect.py which is a slightly modified version of Adafruit_CircuitPython_Display_Shapes that includes
+an explicit call to palette.make_opaque() in the fill color setter function.
+
+## test_opaque.py
+A simple test to demonstrate the behavior of a RoundRect when initializing as a shape with a solid fill
+color using **fill=WHITE**. Uses my_roundrect.py which is a slightly modified version of Adafruit_CircuitPython_Display_Shapes
+that includes an explicit call to palette.make_opaque() in the fill color setter function.
 
 ## trans_opaq_test.py
-This test will add some lower-level explicit calls to make_transparent() and make_opaque().  However, 
-they are not implemented yet.  This was the original name of fill_color_none_test.py, but I 
-thought it was misleading.
-
-Coming soon, I guess...  It's a pretty nice day out there, so I want to see the sun. :)
+Deprecated. Replaced with test_transparent.py and test_opaque.py.

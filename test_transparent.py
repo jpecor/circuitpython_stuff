@@ -36,20 +36,28 @@ font = bitmap_font.load_font("/fonts/Dina.bdf")
 pyportal = PyPortal(default_bg=BLACK)
 
 roundrect = RoundRect(100, 60, 120, 120, 10, fill=None, outline=WHITE, stroke=5)
+msg = Label(font, text="Exp: None", max_glyphs=15)
+msg.x = 100
+msg.y = 40
 
 pyportal.splash.append(roundrect)
+pyportal.splash.append(msg)
 time.sleep(2.0)
 
 # These should fill with a color
+msg.text = "Exp: Green"
 roundrect.fill = GREEN
 time.sleep(2.0)
 
+msg.text = "Exp: Blue"
 roundrect.fill = LIGHT_BLUE
 time.sleep(2.0)
 
+msg.text = "Exp: Orange"
 roundrect.fill = ORANGE
 time.sleep(2.0)
 
+msg.text = "Exp: Red"
 roundrect.fill = RED
 time.sleep(2.0)
 
